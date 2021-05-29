@@ -20,7 +20,7 @@ With this information, I can make some inferences about whether or not this emai
 
 ![image](https://user-images.githubusercontent.com/84248865/120082536-378d6d00-c089-11eb-8ce9-45ace4c0d92a.png)
 
-These are some good indicators that the email is not legitimate. There are other mechanisms you can check for validity such as [SPF and DKIM](https://woodpecker.co/blog/spf-dkim/), but for this email they were not useful because the sender didn’t actually attempt to spoof the eHarmony.com domain. Rather, they simply named the account "eHarmony Offer" to try to trick the recipient. You can see in this screenshot, the email already seems suspicious just by looking at it in Gmail. 
+These are some good indicators that the email is not legitimate. There are other mechanisms you can check for validity such as [SPF and DKIM](https://woodpecker.co/blog/spf-dkim/), but for this email they were not useful because the sender didn’t actually attempt to spoof the eHarmony.com domain. Rather, they simply named the account "eHarmony Offer" to try to trick the recipient. As you can see in this screenshot, the email already seems suspicious just by looking at it in Gmail. 
 
 ![image](https://user-images.githubusercontent.com/84248865/120082735-34df4780-c08a-11eb-9cfc-9b57a7bf3748.png)
 
