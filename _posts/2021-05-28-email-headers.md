@@ -24,6 +24,6 @@ These are some good indicators that the email is not legitimate. There are other
 
 ![image](https://user-images.githubusercontent.com/84248865/120082735-34df4780-c08a-11eb-9cfc-9b57a7bf3748.png)
 
-Now, give it a try on your own! See what you can learn by looking at the **Received:** headers of a suspicious email. Just be sure to do it carefully and do not analyze the email directly through the [email cliet](https://help.returnpath.com/hc/en-us/articles/220569547-What-is-a-Mail-User-Agent-MUA-), in case of malicious content. For a more in-depth analysis tutorial, check out this [video](https://www.youtube.com/watch?v=nK5QpGSBR8c) by 13Cubed. It's very informative and really helped me understand the process.
+Now, give it a try on your own! See what you can learn by looking at the **Received:** headers of a suspicious email. Just be sure to do it carefully and do not analyze the email directly through the [email client](https://help.returnpath.com/hc/en-us/articles/220569547-What-is-a-Mail-User-Agent-MUA-), in case of malicious content. For a more in-depth analysis tutorial, check out this [video](https://www.youtube.com/watch?v=nK5QpGSBR8c) by 13Cubed. It's very informative and really helped me understand the process.
 
 Thank you for reading!
