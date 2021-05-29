@@ -10,7 +10,7 @@ First, you’ll want to focus your attention on the **Received:** headers. These
 
 Let’s take a look at an email I received that is pretending to be from eHarmony.com.
 
-![image](https://user-images.githubusercontent.com/84248865/120083922-c69e8300-c091-11eb-8df9-c3d9911a1cf3.png)
+![image](https://user-images.githubusercontent.com/84248865/120083986-37459f80-c092-11eb-8505-f3219c69ee77.png)
 
 You can see in the first **Received:** header, it shows the initial message came from 2602fed2730003481616b16f00000001.kfo9rcm.ga and was received by mx.google.com. You will also see the IP address, in this case an IPv6 address, in brackets. 
 
