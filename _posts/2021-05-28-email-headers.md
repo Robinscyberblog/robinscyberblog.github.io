@@ -20,7 +20,7 @@ With this information, I can try to determine whether or not this email came fro
 
 ![image](https://user-images.githubusercontent.com/84248865/120116647-c3b59800-c14e-11eb-90c3-c2c0b34902d5.png)
 
-You can see here the mail exchanger is eharmony-com.mail.protection.outlook.com. This is the domain for the mail server that eHarmony uses to handle email traffic. Now, we can use this MX record to find it's IP address with another DNS query. This time, we will query the A record, which is used to point a domain to an IP address. 
+You can see here the mail exchanger is eharmony-com.mail.protection.outlook.com. This is the domain for the mail server that eHarmony uses to handle email traffic. Now, we can use this MX record to find its IP address with another DNS query. This time, we will query the 'A' record, which is used to point a domain to an IP address. 
 
 ![image](https://user-images.githubusercontent.com/84248865/120117130-5820fa00-c151-11eb-98f3-292420b07641.png)
 
