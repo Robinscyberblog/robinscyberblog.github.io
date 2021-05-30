@@ -8,7 +8,7 @@ In this post I want to go over email header analysis using the **Received**: lin
 
 First, you’ll want to focus your attention on the **Received:** headers. These lines are important, because they show the path a message takes from the initial sender to the receiver. If there are several **Received:** headers, the message was handled by multiple servers. It is also important to note that these headers are read in reverse order; from the bottom (where the message originated) to the top (where the message was finally delivered). 
 
-Let’s take a look at an email I received that is pretending to be from eHarmony.com.
+Let’s take a look at an email I received that is pretending to be from eHarmony.com. You can view the full header as a .txt document [here](https://raw.githubusercontent.com/Robinscyberblog/robinscyberblog.github.io/master/Untitled%20document.txt). 
 
 ![image](https://user-images.githubusercontent.com/84248865/120083986-37459f80-c092-11eb-8505-f3219c69ee77.png)
 
@@ -16,14 +16,35 @@ You can see in the first **Received:** header, it shows the initial message came
 
 ![image](https://user-images.githubusercontent.com/84248865/120082464-e54c4c00-c088-11eb-94ae-7a2d3b049fe7.png)
 
-With this information, I can make some inferences about whether or not this email came from eHarmony. First and foremost, it seems highly unlikely that eHarmony would use an address like 2602fed2730003481616b16f00000001.kfo9rcm.ga in their email infrastructure. Furthermore, if I conduct a [DNS lookup](https://kb.intermedia.net/Article/819) of eHarmony.com, the IP address associated with the email I received is not included in the IP addresses resolved for eHarmony. In fact, the IP address is associated with a host out of Armenia (also a red flag).
+With this information, I can try to determine whether or not this email came from eHarmony. First and foremost, it seems highly unlikely that eHarmony would use an address like 2602fed2730003481616b16f00000001.kfo9rcm.ga in their email infrastructure. Furthermore, if I conduct a [DNS lookup](https://activedirectorypro.com/use-nslookup-check-dns-records/) to find the mail exchange or 'MX' record for eHarmony.com, it returns this result:
 
-![image](https://user-images.githubusercontent.com/84248865/120082536-378d6d00-c089-11eb-8ce9-45ace4c0d92a.png)
+![image](https://user-images.githubusercontent.com/84248865/120116647-c3b59800-c14e-11eb-90c3-c2c0b34902d5.png)
 
-These are some good indicators that the email is not legitimate. There are other mechanisms you can check for validity such as [SPF and DKIM](https://woodpecker.co/blog/spf-dkim/), but for this email they were not useful because the sender didn’t actually attempt to spoof the eHarmony.com domain. Rather, they simply named the account "eHarmony Offer" to try to trick the recipient. As you can see in this screenshot, the email already seems suspicious just by looking at it in Gmail. 
+You can see here the mail exchanger is eharmony-com.mail.protection.outlook.com. This is the domain for the mail server that eHarmony uses to handle email traffic. Now, we can use this MX record to find it's IP address with another DNS query. This time, we will query the A record, which is used to point a domain to an IP address. 
+
+![image](https://user-images.githubusercontent.com/84248865/120117130-5820fa00-c151-11eb-98f3-292420b07641.png)
+
+This returns two IP addresses. If we use [WhoIs lookup](https://whois.domaintools.com/) to search for these IP addresses, we find that they both point to Microsoft as the organization, which makes sense because the mail exchanger used is Microsoft Outlook. 
+
+Now, if we go back and take another look at the IP address associated with the email I received, it bears no connection to either of the addresses resolved to eHarmony's MX record. So this email could not have come from eHarmony.com.
+
+There are other mechanisms you can check for validity such as [SPF and DKIM](https://woodpecker.co/blog/spf-dkim/), but for this email they were not useful because the sender didn’t actually attempt to spoof the eHarmony.com domain. Rather, they simply named the account "eHarmony Offer" to try to trick the recipient. As you can see in this screenshot, the email already seems very suspicious just by looking at it in Gmail. 
 
 ![image](https://user-images.githubusercontent.com/84248865/120082735-34df4780-c08a-11eb-9cfc-9b57a7bf3748.png)
 
-Now, give it a try on your own! See what you can learn by looking at the **Received:** headers of a suspicious email. Just be sure to do it carefully and do not analyze the email directly through the [email client](https://help.returnpath.com/hc/en-us/articles/220569547-What-is-a-Mail-User-Agent-MUA-), in case of malicious content. For a more in-depth analysis tutorial, check out this [video](https://www.youtube.com/watch?v=nK5QpGSBR8c) by 13Cubed. It's very informative and really helped me understand the process.
+Now, give it a try on your own. See what you can learn by looking at the **Received:** headers of a suspicious email. Just be sure to do it carefully and do not analyze the email directly through the email client, in case of malicious content. For a more in-depth analysis tutorial, check out this [video](https://www.youtube.com/watch?v=nK5QpGSBR8c) by 13Cubed. It's very informative and it really helped me understand the process.
 
 Thank you for reading!
+
+References:
+
+Allen, Robert. “How to Use Nslookup to Check DNS Records.” Active Directory Pro, Active Directory Pro, 17 Feb. 2018, https://activedirectorypro.com/use-nslookup-check-dns-records/.
+
+Davis, Richard. “Email Header Analysis and Forensic Investigation.” Https://Www.13cubed.Com/, YouTube, 13 Jan. 2020, https://www.youtube.com/watch?v=nK5QpGSBR8c.
+
+Dawiskiba, Cathy. “SPF & DKIM for Dummies: What Is It? Why You Want to Set It Up.” Woodpecker Blog, https://business.facebook.com/woodpeckerapp, 24 July 2020, https://woodpecker.co/blog/spf-dkim/.
+
+Pressable. “What Are DNS Records? Types and How to Use Them.” Pressable, https://www.facebook.com/pressable, 11 Oct. 2019, https://pressable.com/2019/10/11/what-are-dns-records-types-explained-2/.
+
+“Whois Lookup, Domain Availability & IP Search - DomainTools.” Whois Lookup, Domain Availability & IP Search - DomainTools, https://whois.domaintools.com/. Accessed 16 May 2021.
+
