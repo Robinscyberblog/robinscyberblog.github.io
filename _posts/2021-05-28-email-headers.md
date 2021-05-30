@@ -18,11 +18,11 @@ You can see in the first **Received:** header, it shows the initial message came
 
 With this information, I can try to determine whether or not this email came from eHarmony. First and foremost, it seems highly unlikely that eHarmony would use an address like 2602fed2730003481616b16f00000001.kfo9rcm.ga in their email infrastructure. Furthermore, if I conduct a [DNS lookup](https://activedirectorypro.com/use-nslookup-check-dns-records/) to find the mail exchange or 'MX' record for eHarmony.com, it returns this result:
 
-![image](https://user-images.githubusercontent.com/84248865/120116647-c3b59800-c14e-11eb-90c3-c2c0b34902d5.png)
+
 
 You can see here the mail exchanger is eharmony-com.mail.protection.outlook.com. This is the domain for the mail server that eHarmony uses to handle email traffic. Now, we can use this MX record to find its IP address with another DNS query. This time, we will query the 'A' record, which is used to point a domain to an IP address. 
 
-![image](https://user-images.githubusercontent.com/84248865/120117130-5820fa00-c151-11eb-98f3-292420b07641.png)
+
 
 This returns two IP addresses. If we use [WhoIs lookup](https://whois.domaintools.com/) to search for these IP addresses, we find that they both point to Microsoft as the organization, which makes sense because the mail exchanger used is Microsoft Outlook. 
 
