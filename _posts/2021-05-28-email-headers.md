@@ -14,7 +14,7 @@ Let’s take a look at an email I received that is pretending to be from eHarmon
 
 You can see in the first **Received:** header, it shows the initial message came from 2602fed2730003481616b16f00000001.kfo9rcm.ga and was received by mx.google.com. You will also see the IP address, in this case an IPv6 address, in brackets. 
 
-![image](https://user-images.githubusercontent.com/84248865/120082464-e54c4c00-c088-11eb-94ae-7a2d3b049fe7.png)
+![image](https://user-images.githubusercontent.com/84248865/120119554-f3b86780-c15d-11eb-8252-6ff6452526c8.png)
 
 With this information, I can try to determine whether or not this email came from eHarmony. First and foremost, it seems highly unlikely that eHarmony would use an address like 2602fed2730003481616b16f00000001.kfo9rcm.ga in their email infrastructure. Furthermore, if I conduct a [DNS lookup](https://activedirectorypro.com/use-nslookup-check-dns-records/) to find the mail exchange or 'MX' record for eHarmony.com, it returns this result:
 
@@ -38,13 +38,13 @@ Thank you for reading!
 
 References:
 
-Allen, Robert. “How to Use Nslookup to Check DNS Records.” Active Directory Pro, Active Directory Pro, 17 Feb. 2018, https://activedirectorypro.com/use-nslookup-check-dns-records/.
+Allen, Robert. “How to Use Nslookup to Check DNS Records.” Active Directory Pro, Active Directory Pro, 17 Feb. 2018, [https://activedirectorypro.com/use-nslookup-check-dns-records/](https://activedirectorypro.com/use-nslookup-check-dns-records/).
 
-Davis, Richard. “Email Header Analysis and Forensic Investigation.” Https://Www.13cubed.Com/, YouTube, 13 Jan. 2020, https://www.youtube.com/watch?v=nK5QpGSBR8c.
+Davis, Richard. “Email Header Analysis and Forensic Investigation.” [Https://Www.13cubed.Com/](Https://Www.13cubed.Com/), YouTube, 13 Jan. 2020, [https://www.youtube.com/watch?v=nK5QpGSBR8c](https://www.youtube.com/watch?v=nK5QpGSBR8c).
 
-Dawiskiba, Cathy. “SPF & DKIM for Dummies: What Is It? Why You Want to Set It Up.” Woodpecker Blog, https://business.facebook.com/woodpeckerapp, 24 July 2020, https://woodpecker.co/blog/spf-dkim/.
+Dawiskiba, Cathy. “SPF & DKIM for Dummies: What Is It? Why You Want to Set It Up.” Woodpecker Blog, 24 July 2020, [https://woodpecker.co/blog/spf-dkim/](https://woodpecker.co/blog/spf-dkim).
 
-Pressable. “What Are DNS Records? Types and How to Use Them.” Pressable, https://www.facebook.com/pressable, 11 Oct. 2019, https://pressable.com/2019/10/11/what-are-dns-records-types-explained-2/.
+Pressable. “What Are DNS Records? Types and How to Use Them.” Pressable, 11 Oct. 2019, [https://pressable.com/2019/10/11/what-are-dns-records-types-explained-2/](https://pressable.com/2019/10/11/what-are-dns-records-types-explained-2/).
 
-“Whois Lookup, Domain Availability & IP Search - DomainTools.” Whois Lookup, Domain Availability & IP Search - DomainTools, https://whois.domaintools.com/. Accessed 16 May 2021.
+“Whois Lookup, Domain Availability & IP Search - DomainTools.” Whois Lookup, Domain Availability & IP Search - DomainTools, [https://whois.domaintools.com/](https://whois.domaintools.com/). Accessed 16 May 2021.
 
