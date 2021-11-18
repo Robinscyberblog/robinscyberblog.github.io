@@ -38,11 +38,13 @@ There are some other connections to **microsoft.com** and **windowsupdate.com**,
 Something that sticks out among these URLs is a connection to **simpsonsavingss.com**. When we follow the TCP stream, we see a GET request that appears to be for an executable file:
 
 ![follow tcp stream](https://user-images.githubusercontent.com/84248865/142339067-a4e6126a-009b-4c07-a353-8a2ee53c776a.png)
+
 ![date6 file](https://user-images.githubusercontent.com/84248865/142339097-23b36099-df68-4554-ba7f-9dcc3ae4df53.png)
 
 We may want to anaylyze this file later in a sandboxed environment or create a hash for it. To quickly save the file off, you can go to **File -> Export Objects -> HTTP** and then select the packet, as shown here:
 
 ![export object hightlighted](https://user-images.githubusercontent.com/84248865/142339274-aaf60d75-c188-4725-bc1f-97aa9c45c843.png)
+
 
 ![simpsonsavings save object1](https://user-images.githubusercontent.com/84248865/142339283-50bb65c8-35d1-4766-8bc4-69cef597b8c3.png)
 
@@ -53,6 +55,9 @@ Before doing anything with the file, it would also be a good idea to run the dom
 It appears there are two IP addresses associated with this traffic - 167.172.37.9 and 94.158.245.52. Encrypted traffic to IP addresses with no associated domain name is unusual and could be an indicator of C2 traffic, so these IPs should be investigated. If you search for these IP addresses and nothing comes up, you may need to pivot to other sources of information to invesigate.
 
 Thank you for reading this quick Wireshark PCAP analysis. A big thanks to Brad Duncan for offering these real-world PCAPs and exercises. Brad also recently published a [Wireshark video tutorial workshop](https://unit42.paloaltonetworks.com/wireshark-workshop-videos/), which I found very informative and engaging. This was a brief post, but I hope you learned something about Wireshark and the different filters you can use to pivot through data and find relevant information.
+
+
+
 
 
 
