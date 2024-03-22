@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-Coming soon!
+Hi, my name is Robin. I created this blog to showcase some of the skills and techniques that I have developed as a cyber security analyst. More coming soon.
